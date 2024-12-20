@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import '../styles/App.css';
+// import '../styles/App.css';
 
 function App() {
     const [markdown, setMarkdown] = useState("")
