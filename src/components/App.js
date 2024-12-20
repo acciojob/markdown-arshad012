@@ -1,26 +1,22 @@
 
-import React from "react";
+import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 import '../styles/App.css';
 
 function App() {
-    const [loading, setLoading] = React.useState(true);
-    const [text, setText] = React.useState('');
-
-    React.useEffect(() => {
-        setTimeout(() => {
-            setLoading(false);
-        },2000)
-    })
-
-    return loading ? <h1>Loading....</h1> :
-    <div className="app">
-        <div className="textarea-box">
-            <textarea className="textarea" onInput={(e) => setText(e.target.value)}></textarea>
+    const [markdown, setMarkdown] = useState("")
+    const [loading, setLoading] = useState(true)
+ 
+    const hancleChange = (e) => {
+        setMarkdown(e.target.value)
+    }
+ 
+    return (
+        <div className='app'>
+            <textarea className="textarea" onChange={hancleChange}></textarea>
+            <ReactMarkdown className="preview" children={markdown} />
         </div>
-        <div className="preview">
-            <h1 id="Heading">{text}</h1>
-        </div>
-    </div>
+    )
 }
 
 
