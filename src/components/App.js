@@ -17,7 +17,7 @@ function App() {
         <div className="textarea-box">
             <textarea className="textarea" onInput={(e) => setText(e.target.value)}></textarea>
         </div>
-        <div className="preview">{text}</div>
+        <div className="preview"><h1>{text}</h1></div>
     </div>
 }
 
